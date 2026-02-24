@@ -18,6 +18,16 @@ import song17 from "./assets/song17.mp3"
 import song18 from "./assets/song18.mp3"
 import song19 from "./assets/song19.mp3"
 import song20 from "./assets/song20.mp3"
+import song21 from "./assets/song21.mp3"
+import song22 from "./assets/song22.mp3"
+import song23 from "./assets/song23.mp3"
+import song24 from "./assets/song24.mp3"
+import song25 from "./assets/song25.mp3"
+import song26 from "./assets/song26.mp3"
+import song27 from "./assets/song27.mp3"
+import song28 from "./assets/song28.mp3"
+import song29 from "./assets/song29.mp3"
+import song30 from "./assets/song30.mp3"
 import image1 from "./assets/image1.jpg"
 import image2 from "./assets/image2.jpg"
 import image3 from "./assets/image3.jpg"
@@ -38,6 +48,16 @@ import image17 from "./assets/image17.jpg"
 import image18 from "./assets/image18.jpg"
 import image19 from "./assets/image19.jpg"
 import image20 from "./assets/image20.jpg"
+import image21 from "./assets/image21.jpg"
+import image22 from "./assets/image22.jpg"
+import image23 from "./assets/image23.jpg"
+import image24 from "./assets/image24.jpg"
+import image25 from "./assets/image25.jpg"
+import image26 from "./assets/image26.jpg"
+import image27 from "./assets/image27.jpg"
+import image28 from "./assets/image28.jpg"
+import image29 from "./assets/image29.jpg";
+import image30 from "./assets/image30.jpg"
 
 export const songsData = [
   {
@@ -220,4 +240,94 @@ export const songsData = [
     liked: false,
     singer: "Arijit Singh, Neeti Mohan",
   },
+  {
+    id: 21,
+    name: "Sooraj Dooba Hain",
+    song: song21,
+    image: image21,
+    category: "Romantic, Bollywood",
+    liked: false,
+    singer: "Amaal Mallik, Arijit Singh",
+  },
+  {
+    id: 22,
+    name: "Samaya Lagu Pache",
+    song: song22,
+    image: image22,
+    category: "Romantic, Pop",
+    liked: false,
+    singer: "Sambit Kumar Mohanty, Soujanya Ratha",
+  },
+  {
+    id: 23,
+    name: "Kalyani",
+    song: song23,
+    image: image23,
+    category: "Malayalam",
+    liked: false,
+    singer: "ARJN, KDS, FIFTY4,RONN",
+  },
+  {
+    id: 24,
+    name: "Deewaniyat",
+    song: song24,
+    image: image24,
+    category: "Romantic, Bollywood, Soulful",
+    liked: false,
+    singer: "Vishal Mishra",
+  },
+  {
+    id: 25,
+    name: "Tera Yaar Hoon Main",
+    song: song25,
+    image: image25,
+    category: "Emotional, Bollywood, Friendship",
+    liked: false,
+    singer: "Arijit Singh",
+  },
+  {
+    id: 26,
+    name: "AZUL",
+    song: song26,
+    image: image26,
+    category: "Punjabi Pop, Party Anthem",
+    liked: false,
+    singer: "Guru Randhawa",
+  },
+  {
+    id: 27,
+    name: "Jo Tum Mere Ho",
+    song: song27,
+    image: image27,
+    category: "Romantic, Lo-Fi, Indie-Pop",
+    liked: false,
+    singer: "Anuv Jain",
+  },
+  {
+    id: 28,
+    name: "Jaane Na Tu",
+    song: song28,
+    image: image28,
+    category: "Romantic Ballad, Indie-Pop",
+    liked: false,
+    singer: "Bhoomi, Naaz, Saaheal",
+  },
+  {
+    id: 29,
+    name: "Hey Jagare",
+    song: song29,
+    image: image29,
+    category: "Odia Jagannath Bhajan",
+    liked: false,
+    singer: "Sourav Bhardwaj",
+  },
+  {
+    id: 30,
+    name: "Mo Jaga Kalia",
+    song: song30,
+    image: image30,
+    category: "Odia Jagannath Bhajan",
+    liked: false,
+    singer: "Sourav Bhardwaj, Matruprasad Rath",
+  }
 ];
