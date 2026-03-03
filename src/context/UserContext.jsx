@@ -1,70 +1,71 @@
-import React, { createContext, useState, useEffect, useRef } from 'react'
-import { songsData } from '../songs'
+import React, { createContext, useState, useEffect, useRef } from "react";
+import { songsData } from "../songs";
 
-export const datacontext = createContext()
+export const datacontext = createContext();
 
 function UserContext({ children }) {
-    let audioRef = useRef(new Audio())
-    let [index, setIndex] = useState(0)
-    let [playingSong, setPlayingSong] = useState(false)
+  let audioRef = useRef(new Audio());
+  let [index, setIndex] = useState(0);
+  let [playingSong, setPlayingSong] = useState(false);
 
-    useEffect(() => {
-      audioRef.current.src = songsData[index].song
-      audioRef.current.load()
-      if (playingSong) {
-        playSong()
-      }
-    }, [index])
+  // 🎵 Change song when index changes
+  useEffect(() => {
+    const audio = audioRef.current;
+    audio.src = songsData[index].song;
+    audio.load();
 
-    function playSong() {
-        setPlayingSong(true)
-        audioRef.current.play()
+    if (playingSong) {
+      audio.play();
     }
+  }, [index]);
 
-    function pauseSong() {
-      setPlayingSong(false);
-      audioRef.current.pause();
+
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    const handleEnded = () => {
+      setIndex((prev) => (prev + 1) % songsData.length);
+    };
+
+    audio.addEventListener("ended", handleEnded);
+
+    return () => {
+      audio.removeEventListener("ended", handleEnded);
+    };
+  }, []);
+
+  function playSong() {
+    setPlayingSong(true);
+    audioRef.current.play();
   }
-  
+
+  function pauseSong() {
+    setPlayingSong(false);
+    audioRef.current.pause();
+  }
+
   function nextSong() {
-    setIndex((prev) => (prev + 1) % songsData.length)
+    setIndex((prev) => (prev + 1) % songsData.length);
   }
 
   function prevSong() {
-    setIndex((prev) => (prev - 1 + songsData.length) % songsData.length)
+    setIndex((prev) => (prev - 1 + songsData.length) % songsData.length);
   }
 
+  let value = {
+    audioRef,
+    playSong,
+    pauseSong,
+    playingSong,
+    setPlayingSong,
+    nextSong,
+    index,
+    setIndex,
+    prevSong,
+  };
 
-    // setIndex((prev) => {
-    //   if (prev === 0) {
-    //     return songsData.length - 1;
-    //   } else {
-    //     return prev - 1;
-    //   }
-    // });
-  
-
-  
-
-    let value = {
-      audioRef,
-      playSong,
-      pauseSong,
-      playingSong,
-      setPlayingSong,
-      nextSong,
-      index,
-      setIndex,
-      prevSong,
-    };
-
-  return (
-      <div>
-        <datacontext.Provider value={value}>
-            {children}
-        </datacontext.Provider>
-    </div>
-  )
+  return <datacontext.Provider value={value}>{children}</datacontext.Provider>;
 }
 
-export default UserContext
+export default UserContext;
+ 
